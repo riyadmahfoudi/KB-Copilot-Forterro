@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "KB Copilot for Forterro",
+  "version": "1.0",
+  "description": "Assistant panel to quickly insert templates, check missing sections, and format KB articles.",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "icons": {
+    "16": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://helpdesk.forterro.com/a/solutions/articles/new*"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "js": [
+        "settings.js",
+        "template.js",
+        "validator.js",
+        "formatter.js",
+        "content.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "template.html",
+        "logo.png"
+      ],
+      "matches": [
+        "https://helpdesk.forterro.com/*"
+      ]
+    }
+  ]
+}
