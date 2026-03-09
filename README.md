@@ -69,9 +69,3 @@ The formatter also handles dynamic content situations:
 - No duplicate blank lines
 - No unwanted indentation
 - Stable formatting when Fix All is run multiple times
-
----
-
-# Installation
-
-1. Clone the repository
