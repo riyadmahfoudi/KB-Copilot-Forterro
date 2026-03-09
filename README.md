@@ -1,4 +1,4 @@
-# KB Copilot – Forterro
+# KB Copilot – Forterro v1.0
 
 KB Copilot is a Chrome extension designed to standardize the formatting of Knowledge Base (KB) articles in the Forterro support portal.
 
