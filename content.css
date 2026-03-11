@@ -1,0 +1,379 @@
+/* content.css */
+/* Polished and professional styling for the KB Copilot panel */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+#kb-copilot-panel {
+  position: fixed;
+  right: 20px;
+  top: 100px;
+  width: 260px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Header / Drag Handle ── */
+.kbc-header {
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  color: #ffffff;
+  padding: 14px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  cursor: grab;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 12px 12px 0 0;
+  letter-spacing: 0.3px;
+}
+
+.kbc-header:active {
+  cursor: grabbing;
+}
+
+#kbc-logo {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+/* ── Buttons ── */
+.kbc-buttons {
+  padding: 14px 14px 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.kbc-btn {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 9px 14px;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.18s ease;
+  text-align: center;
+  letter-spacing: 0.1px;
+}
+
+.kbc-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.kbc-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+#btn-insert-template {
+  background-color: #ebf8ff;
+  border-color: #90cdf4;
+  color: #2b6cb0;
+}
+
+#btn-insert-template:hover {
+  background-color: #bee3f8;
+  border-color: #63b3ed;
+}
+
+#btn-add-changelog {
+  background-color: #f0fff4;
+  border-color: #9ae6b4;
+  color: #276749;
+}
+
+#btn-add-changelog:hover {
+  background-color: #c6f6d5;
+  border-color: #68d391;
+}
+
+#btn-fix-all {
+  background-color: #faf5ff;
+  border-color: #d6bcfa;
+  color: #6b46c1;
+}
+
+#btn-fix-all:hover {
+  background-color: #e9d8fd;
+  border-color: #b794f4;
+}
+
+/* ── Toast ── */
+.kbc-toast {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  z-index: 1000000;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out, top 0.25s ease;
+  pointer-events: none;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+  white-space: nowrap;
+}
+
+.kbc-toast-show {
+  opacity: 1;
+  top: 14px;
+}
+
+.kbc-toast-success {
+  background-color: #38a169;
+}
+
+.kbc-toast-error {
+  background-color: #e53e3e;
+}
+
+/* ── Settings Section ── */
+.kbc-settings-section {
+  border-top: 1px solid #edf2f7;
+  padding: 8px 14px 10px 14px;
+  background-color: #f7fafc;
+  border-radius: 0 0 12px 12px;
+}
+
+.kbc-toggle-btn {
+  background: none;
+  border: none;
+  color: #718096;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 4px 0;
+  width: 100%;
+  text-align: left;
+  font-weight: 500;
+  outline: none;
+  transition: color 0.15s;
+}
+
+.kbc-toggle-btn:hover {
+  color: #2b6cb0;
+}
+
+.kbc-settings-content {
+  padding: 8px 0 2px 0;
+  font-size: 12px;
+  color: #4a5568;
+}
+
+.kbc-setting-field {
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.kbc-setting-field label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #718096;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.kbc-setting-field input {
+  padding: 5px 8px;
+  font-size: 12px;
+  font-family: inherit;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+  outline: none;
+}
+
+.kbc-setting-field input:focus {
+  border-color: #63b3ed;
+  box-shadow: 0 0 0 2px rgba(99, 179, 237, 0.2);
+}
+
+#kbc-save-settings {
+  width: 100%;
+  margin-top: 6px;
+  background: linear-gradient(135deg, #3182ce, #2b6cb0);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 7px;
+  font-size: 12px;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.15s;
+}
+
+#kbc-save-settings:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+#kbc-settings-status {
+  text-align: center;
+  font-size: 11px;
+  color: #38a169;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+/* ── Editor Hard Override - Prevent trailing visual indents ── */
+.fr-element.fr-view p:not(ol p):not(ul p):not(table p):not(blockquote p),
+.fr-element.fr-view div:not(ol div):not(ul div):not(table div):not(blockquote div),
+.redactor-editor p:not(ol p):not(ul p):not(table p):not(blockquote p),
+.redactor-editor div:not(ol div):not(ul div):not(table div):not(blockquote div),
+[contenteditable="true"] p:not(ol p):not(ul p):not(table p):not(blockquote p),
+[contenteditable="true"] div:not(ol div):not(ul div):not(table div):not(blockquote div) {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  text-indent: 0 !important;
+}
+
+.fr-element.fr-view p[class*="indent"]:not(ol p):not(ul p):not(table p),
+.fr-element.fr-view div[class*="indent"]:not(ol div):not(ul div):not(table div),
+.redactor-editor p[class*="indent"]:not(ol p):not(ul p):not(table p),
+.redactor-editor div[class*="indent"]:not(ol div):not(ul div):not(table div),
+[contenteditable="true"] p[class*="indent"]:not(ol p):not(ul p):not(table p),
+[contenteditable="true"] div[class*="indent"]:not(ol div):not(ul div):not(table div) {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  text-indent: 0 !important;
+}
+
+/* ── Image Style Toolbar ── */
+#kbc-image-style-panel {
+  position: fixed;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12), 0 2px 10px rgba(0, 0, 0, 0.05);
+  font-family: 'Inter', sans-serif;
+  z-index: 1000000;
+  padding: 8px;
+  width: 42px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: all;
+}
+
+.kbc-ist-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+}
+
+.kbc-ist-btn:hover {
+  background-color: #f1f5f9;
+  color: #1a202c;
+  transform: scale(1.05);
+}
+
+.kbc-ist-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+#ist-border-toggle:checked + .kbc-ist-btn {
+  background-color: #ebf8ff;
+  color: #3182ce;
+}
+
+.kbc-ist-divider {
+  width: 24px;
+  height: 1px;
+  background-color: #edf2f7;
+  margin: 2px 0;
+}
+
+.kbc-ist-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#ist-border-color {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 6px;
+  cursor: pointer;
+  background: none;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+#ist-border-color:hover {
+  transform: scale(1.05);
+  border-color: #cbd5e0;
+}
+
+#ist-border-color::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+#ist-border-color::-webkit-color-swatch {
+  border: none;
+}
+
+#ist-border-size {
+  width: 32px;
+  height: 24px;
+  padding: 0;
+  font-size: 11px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  outline: none;
+  text-align: center;
+  background-color: #f7fafc;
+  font-weight: 600;
+  color: #4a5568;
+  transition: all 0.2s;
+}
+
+#ist-border-size:focus {
+  border-color: #63b3ed;
+  background-color: #fff;
+  box-shadow: 0 0 0 2px rgba(99, 179, 237, 0.1);
+}
+
+/* Hide default Chrome number arrows for cleaner look */
+#ist-border-size::-webkit-inner-spin-button, 
+#ist-border-size::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
