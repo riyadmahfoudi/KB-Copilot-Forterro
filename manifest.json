@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "KB Copilot for Forterro",
+  "name": "KB Tool for Forterro",
   "version": "1.0",
   "description": "Assistant panel to quickly insert templates, check missing sections, and format KB articles.",
   "permissions": [

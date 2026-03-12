@@ -4,8 +4,8 @@
 const copilotHTML = `
   <div id="kb-copilot-panel">
     <div class="kbc-header" id="kbc-drag-handle">
-      <img id="kbc-logo" src="" alt="KB Copilot" />
-      <span>KB Copilot</span>
+      <img id="kbc-logo" src="" alt="KB Tool" />
+      <span>KB Tool</span>
     </div>
     
     <div class="kbc-buttons">

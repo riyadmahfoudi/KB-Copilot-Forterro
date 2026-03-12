@@ -1,14 +1,15 @@
-# KB Copilot – Forterro v1.0
+# KB Tool – Forterro v1.1
 
-KB Copilot is a Chrome extension designed to standardize the formatting of Knowledge Base (KB) articles in the Forterro support portal.
+KB Tool is a Chrome extension designed to standardize the formatting of Knowledge Base (KB) articles in the Forterro support portal.
 
-The extension helps support engineers quickly generate and clean KB articles while enforcing the official KB structure and formatting guidelines.
+The extension helps support engineers quickly generate, validate, and clean KB articles while enforcing the official KB structure and formatting guidelines.
 
 ---
 
 # Features
 
 ## 1. KB Template Generator
+
 Insert a standardized KB article template with predefined sections:
 
 - Introduction
@@ -18,7 +19,7 @@ Insert a standardized KB article template with predefined sections:
 - Subarea sections
 - Change log table
 
-This ensures all KB articles start with the correct structure.
+This ensures all KB articles start with the correct structure and layout.
 
 ---
 
@@ -26,7 +27,7 @@ This ensures all KB articles start with the correct structure.
 
 The **Fix All** button automatically corrects formatting issues inside the editor.
 
-It enforces the official KB spacing and layout rules.
+It enforces the official KB spacing, layout, and typography rules to ensure every article follows the KB standards.
 
 ### Formatting rules
 
@@ -47,6 +48,25 @@ It enforces the official KB spacing and layout rules.
 
 ---
 
+## 3. Screenshot Image Enhancer
+
+KB Tool automatically improves screenshots inserted in KB articles.
+
+When images are detected in the editor, the extension can apply standardized visual formatting to make them clearer and more consistent.
+
+### Image formatting rules
+
+| Rule | Behavior |
+|------|------|
+| Image border | Adds a clean border around screenshots |
+| Image spacing | Automatically adjusts spacing around images |
+| Image separation | Prevents images from sticking together |
+| Text spacing | Maintains correct spacing between text and images |
+
+This ensures screenshots inside articles remain clean, readable, and visually consistent.
+
+---
+
 ## Typography Rules
 
 The extension enforces the official KB font sizes:
@@ -61,11 +81,17 @@ The extension enforces the official KB font sizes:
 
 ## Smart Behavior
 
-The formatter also handles dynamic content situations:
+The formatter is designed to handle dynamic content situations automatically.
 
 - Sections can be removed (Resources, Subarea)
 - Images may or may not exist
 - Spacing recalculates automatically
 - No duplicate blank lines
 - No unwanted indentation
-- Stable formatting when Fix All is run multiple times
+- Stable formatting when **Fix All** is run multiple times
+
+---
+
+## Goal
+
+KB Tool reduces manual formatting work for support engineers and ensures every Knowledge Base article follows the Forterro KB publishing standards.
